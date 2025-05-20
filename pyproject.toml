@@ -1,0 +1,19 @@
+[project]
+name = "brightui"
+version = "0.1.0"
+authors = [
+    {name = "Keerthana", email = "keerthanajothirameshkumar@gmail.com"},
+]
+description = "Bright UI project"
+requires-python = ">=3.8"
+dependencies = [
+    "pytest",  # This would normally be a dev dependency
+]
+
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+testpaths = ["tests"]
