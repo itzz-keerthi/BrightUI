@@ -6,11 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Node.js (or Python)
-        uses: actions/setup-node@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          node-version: '20' # or setup-python for Python projects
+          python-version: '3.12'
       - name: Install dependencies
-        run: npm install # or pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          pip install -e .
       - name: Run tests
-        run: npm test # or pytest
+        run: pytest
